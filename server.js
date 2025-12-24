@@ -17,10 +17,10 @@ const devices = new Map();
 // Middleware to verify webhook secret (optional)
 function verifyWebhook(req, res, next) {
   // implement HMAC or token verification here
-  const token = req.headers['x-webhook-secret'];
+  /*const token = req.headers['x-webhook-secret'];
   if (token !== 'replace_with_strong_secret') {
     return res.status(401).json({ error: 'unauthorized' });
-  }
+  }*/
   next();
 }
 
