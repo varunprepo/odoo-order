@@ -17,12 +17,14 @@ app.post('/odoo/webhook/order', (req, res) => {
   const payload = { type: 'order_created', order };
 
   let sent = false;
+  setInterval(() => {
   for (const [id, ws] of devices) {
     if (ws.readyState === WebSocket.OPEN) {
       ws.send(JSON.stringify(payload));
       sent = true;
     }
   }
+  }, 20000);
 
   return res.json({ ok: true, broadcast: sent });
 });
