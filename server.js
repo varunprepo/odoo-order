@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "replace_with_strong_secret";
 
 const devices = new Map();
